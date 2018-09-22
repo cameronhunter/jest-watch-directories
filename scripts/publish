@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+__dirname="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+source "${__dirname}/npm-check.sh"
+
+while getopts ":o:" opt; do
+  case $opt in
+    o)
+      NPM_CONFIG_OTP=${OPTARG} $(yarn bin)/lerna publish
+      exit $?
+      ;;
+  esac
+done
+
+echo "Usage: publish -o <one-time-password>" >&2
+exit 1

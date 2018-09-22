@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+__dirname="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+source "${__dirname}/npm-check.sh"
