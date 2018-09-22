@@ -1,11 +1,11 @@
 {
   "name": "jest-watch-yarn-workspaces",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A Jest watch plugin to select yarn workspaces to test",
   "author": "Cameron Hunter <hello@cameronhunter.co.uk>",
   "license": "MIT",
   "dependencies": {
-    "jest-watch-directories": "0.0.0"
+    "jest-watch-directories": "^1.0.0"
   },
   "keywords": [
     "jest",
