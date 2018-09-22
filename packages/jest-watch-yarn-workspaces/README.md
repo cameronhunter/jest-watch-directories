@@ -1,4 +1,4 @@
-# jest-watch-yarn-workspaces
+# jest-watch-yarn-workspaces [![npm version](https://badge.fury.io/js/jest-watch-yarn-workspaces.svg)](https://badge.fury.io/js/jest-watch-yarn-workspaces)
 
 A Jest watch plugin to select Yarn workspaces to test.
 

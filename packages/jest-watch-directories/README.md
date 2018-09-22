@@ -1,4 +1,4 @@
-# jest-watch-directories
+# jest-watch-directories [![npm version](https://badge.fury.io/js/jest-watch-directories.svg)](https://badge.fury.io/js/jest-watch-directories)
 
 A Jest watch plugin to select which directories to test.
 

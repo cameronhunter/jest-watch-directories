@@ -1,4 +1,4 @@
-# jest-watch-lerna-packages
+# jest-watch-lerna-packages [![npm version](https://badge.fury.io/js/jest-watch-lerna-packages.svg)](https://badge.fury.io/js/jest-watch-lerna-packages)
 
 A Jest watch plugin to select Lerna packages to test.
 
