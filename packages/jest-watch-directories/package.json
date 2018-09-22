@@ -17,5 +17,6 @@
     "jest",
     "jest-plugin",
     "jest-watch-plugin"
-  ]
+  ],
+  "gitHead": "f189d2ef6761db95cc83e958ec7a3b67783e4387"
 }
