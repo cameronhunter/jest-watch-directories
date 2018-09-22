@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "jest-watch-workspaces-monorepo",
+  "workspaces": [
+    "examples/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "example:directories": "yarn workspace @examples/jest-watch-directories test:watch",
+    "example:lerna-packages": "yarn workspace @examples/jest-watch-lerna-packages test:watch",
+    "example:yarn-workspaces": "yarn workspace @examples/jest-watch-yarn-workspaces test:watch"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}

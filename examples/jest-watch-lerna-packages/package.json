@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "@examples/jest-watch-lerna-packages",
+  "version": "0.0.0",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "jest-watch-lerna-packages": "0.0.0"
+  },
+  "scripts": {
+    "test:watch": "jest --watch"
+  }
+}

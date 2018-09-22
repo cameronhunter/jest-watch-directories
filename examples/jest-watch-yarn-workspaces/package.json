@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "@examples/jest-watch-yarn-workspaces",
+  "version": "0.0.0",
+  "license": "UNLICENSED",
+  "workspaces": ["packages/*"],
+  "devDependencies": {
+    "jest-watch-yarn-workspaces": "0.0.0"
+  },
+  "scripts": {
+    "test:watch": "jest --watch"
+  }
+}
