@@ -1,3 +1,3 @@
 const jestWatchWorkspaces = require('jest-watch-directories/custom');
 
-module.exports = jestWatchWorkspaces(() => {});
+module.exports = jestWatchWorkspaces();

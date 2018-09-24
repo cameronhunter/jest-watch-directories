@@ -5,7 +5,15 @@ const path = require('path');
 const prompts = require('prompts');
 const { clearScreen } = require('ansi-escapes');
 
-module.exports = (getPluginConfig) =>
+const DefaultPluginConfig = Object.freeze({
+  key: 'd',
+  prompt: 'filter by directory{selectionCount, plural, =0 {} other { (# selected)}}',
+  message: 'Select directories',
+  lang: 'en',
+  directories: ['*']
+});
+
+module.exports = (getPluginConfig = () => DefaultPluginConfig) =>
   class {
     constructor({ config: pluginConfig, stdin, stdout }) {
       this._stdin = stdin;
@@ -16,15 +24,8 @@ module.exports = (getPluginConfig) =>
 
     getPluginConfig(rootDir) {
       const config = Object.assign(
-        // Default configuration
-        {
-          key: 'd',
-          prompt: 'filter by directory{selectionCount, plural, =0 {} other { (# selected)}}',
-          message: 'Select directories',
-          lang: 'en',
-          directories: ['*']
-        },
-        // Configuration injected by a wrapping plugin (e.g. jest-watch-yarn-workspaces)
+        {},
+        // Injected configuration
         getPluginConfig(rootDir),
         // Configuration specified as part of jest configuration
         this._pluginConfigOverrides
