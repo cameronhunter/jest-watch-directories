@@ -13,7 +13,12 @@ function findWorkspaces(rootDir) {
   const yarnWorkspaces = packageConfig.workspaces;
 
   const directories = !yarnWorkspaces || Array.isArray(yarnWorkspaces) ? yarnWorkspaces : [yarnWorkspaces];
-  return { key: 'y', prompt: 'filter by yarn workspaces', message: 'Select yarn workspaces', directories };
+  return {
+    key: 'y',
+    prompt: 'filter by Yarn workspaces{selectionCount, plural, =0 {} other { (# selected)}}',
+    message: 'Select yarn workspaces',
+    directories
+  };
 }
 
 module.exports = jestWatchDirectories(findWorkspaces);

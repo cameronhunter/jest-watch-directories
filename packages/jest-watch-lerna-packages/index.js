@@ -13,7 +13,12 @@ function findPackages(rootDir) {
   const lernaPackages = lernaConfig.packages;
 
   const directories = !lernaPackages || Array.isArray(lernaPackages) ? lernaPackages : [lernaPackages];
-  return { key: 'l', prompt: 'filter by lerna packages', message: 'Select lerna packages', directories };
+  return {
+    key: 'l',
+    prompt: 'filter by Lerna packages{selectionCount, plural, =0 {} other { (# selected)}}',
+    message: 'Select lerna packages',
+    directories
+  };
 }
 
 module.exports = jestWatchDirectories(findPackages);
