@@ -79,19 +79,19 @@ module.exports = (getPluginConfig = () => DefaultPluginConfig) =>
       return prompts([
         {
           type: 'multiselect',
-          name: 'activeWorkspaces',
+          name: 'selectedDirectories',
           message: config.message,
           choices: directories.map((name) => ({
             value: name,
             selected: this._selectedDirectories.includes(name)
           }))
         }
-      ]).then(({ activeWorkspaces }) => {
+      ]).then(({ selectedDirectories }) => {
         this._stdin.setRawMode(true);
         this._stdin.resume();
 
-        if (activeWorkspaces !== undefined) {
-          this._selectedDirectories = activeWorkspaces;
+        if (selectedDirectories !== undefined) {
+          this._selectedDirectories = selectedDirectories;
           return true;
         }
 
