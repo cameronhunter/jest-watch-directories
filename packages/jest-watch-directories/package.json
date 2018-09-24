@@ -1,6 +1,6 @@
 {
   "name": "jest-watch-directories",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Jest watch plugin to select directories to test",
   "author": "Cameron Hunter <hello@cameronhunter.co.uk>",
   "license": "MIT",
