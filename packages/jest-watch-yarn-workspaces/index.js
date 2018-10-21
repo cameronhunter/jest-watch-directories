@@ -1,6 +1,20 @@
 const path = require('path');
 const jestWatchDirectories = require('jest-watch-directories/custom');
 
+function getWorkspacesFromConfig(config) {
+  const { workspaces } = config || {};
+
+  if (Array.isArray(workspaces)) {
+    return workspaces;
+  }
+
+  if (workspaces && Array.isArray(workspaces.packages)) {
+    return workspaces.packages;
+  }
+
+  return undefined;
+}
+
 function findWorkspaces(rootDir) {
   let packageConfig;
 
@@ -10,7 +24,7 @@ function findWorkspaces(rootDir) {
     packageConfig = {};
   }
 
-  const yarnWorkspaces = packageConfig.workspaces;
+  const yarnWorkspaces = getWorkspacesFromConfig(packageConfig);
 
   const directories = !yarnWorkspaces || Array.isArray(yarnWorkspaces) ? yarnWorkspaces : [yarnWorkspaces];
   return {
